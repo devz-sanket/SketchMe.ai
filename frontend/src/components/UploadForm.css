@@ -1,0 +1,136 @@
+.upload-form {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  margin: 2rem auto;
+  max-width: 750px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  border: 10px solid rgba(255, 255, 255, 0.15);
+}
+
+.upload-form h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 0 0 10px rgba(0, 174, 255, 0.3);
+}
+
+/* Drop area */
+.drop-area {
+  border: 2px dashed #00bfff;
+  border-radius: 18px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.drop-area:hover {
+  background: rgba(0, 191, 255, 0.05);
+  border-color: #00eaff;
+}
+
+.drop-area p {
+  color: #e0e0e0;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.drop-area input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Select Dropdown */
+.upload-form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0.9); /* White background */
+  color: #111111; /* Dark text for contrast */
+  font-size: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-form select:focus {
+  border-color: rgb(224 20 216 / 77%);
+  background-color: #ffffff;
+  color: #000000;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+
+/* File Info + Button */
+.file-button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.file-info {
+  flex: 1;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Transform Button */
+.upload-form button {
+  background: linear-gradient(to right, #00bfff, #3b82f6);
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.upload-form button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .upload-form {
+    padding: 2rem 1.2rem;
+    max-width: 92%;
+  }
+
+  .file-button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .file-info {
+    text-align: center;
+  }
+
+  .upload-form button {
+    width: 100%;
+  }
+}
