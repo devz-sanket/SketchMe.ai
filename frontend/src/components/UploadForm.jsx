@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./UploadForm.css";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 const UploadForm = ({ onUpload, onResult }) => {
   const [file, setFile] = useState(null);
   const [mode, setMode] = useState("Image to Sketch");
@@ -17,7 +19,7 @@ const UploadForm = ({ onUpload, onResult }) => {
     onUpload(URL.createObjectURL(file));
 
     try {
-      const response = await axios.post("http://localhost:8000/transform", formData, {
+      const response = await axios.post(`${BASE_URL}/transform`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -62,15 +64,12 @@ const UploadForm = ({ onUpload, onResult }) => {
       </div>
 
       <div className="file-button-row">
-  {file && (
-    <div className="file-info">
-      {file.name} ({(file.size / 1024).toFixed(2)} KB)
-    </div>
-  )}
-  
-</div>
-
-
+        {file && (
+          <div className="file-info">
+            {file.name} ({(file.size / 1024).toFixed(2)} KB)
+          </div>
+        )}
+      </div>
 
       <select value={mode} onChange={(e) => setMode(e.target.value)}>
         <option>Image to Sketch</option>

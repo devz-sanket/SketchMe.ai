@@ -6,6 +6,7 @@ import ImageDisplay from "./components/ImageDisplay";
 import "./App.css";
 
 const App = () => {
+  const BASE_URL = import.meta.env.VITE_API_URL;
   const [imageSrc, setImageSrc] = useState(null);
   const [resultSrc, setResultSrc] = useState(null);
 
